@@ -15,4 +15,4 @@ console.log('Результат возводим в степень 3: ', mult);
 
 let result = mult.toString();
 console.log('Выводим на экран 2 первых цифры: ', result.slice(0, 2));
-alert(result.slice(0, 2));
+alert('первые 2 цифры полученного числа: ' + result.slice(0, 2));
