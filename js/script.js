@@ -1,18 +1,22 @@
-let myVar = 266219;
-console.log('Создаем переменную myVar: ', myVar);
-console.log('Тип этой переменной: ', typeof myVar);
+'use strict';
 
-let myArr = myVar.toString().split('');
-console.log('Разбиваем переменную на отдельные числа: ', myArr);
+let week = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'];
+let date = new Date();
+// console.log('date: ', date);
+// console.log('week: ', week);
 
-let mult = 1;
-for (let i = 0; i < myArr.length; i++) {
-  mult *= +myArr[i];
-}
-console.log('Умножаем числа между собой: ', mult);
-mult **= 3;
-console.log('Результат возводим в степень 3: ', mult);
-
-let result = mult.toString();
-console.log('Выводим на экран 2 первых цифры: ', result.slice(0, 2));
-alert('первые 2 цифры полученного числа: ' + result.slice(0, 2));
+week.forEach(function(item, i) {
+  if (i === date.getDay()) {
+    if (i === 0 || i === 6) {
+      document.write(`<strong>${item.italics()}</strong><br>`);
+    } else {
+      document.write(`<strong>${item}</strong><br>`);
+    }    
+  } else {
+    if (i === 0 || i === 6) {
+      document.write(`${item.italics()}<br>`);
+    } else {
+      document.write(`${item}<br>`);
+    }
+  }    
+});
